@@ -11,10 +11,12 @@
     <canvas id="canvas"></canvas>
     <div id="info">Toca una caja para ver detalles</div>
     <script src="script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').catch(error => console.error('Service Worker Error:', error));
-        }
-    </script>
+   <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log('Service Worker registered'))
+            .catch((error) => console.log('Service Worker registration failed:', error));
+    }
+</script>
 </body>
 </html>
